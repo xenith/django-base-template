@@ -111,6 +111,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'static')
 )
 
 # If you set this to False, Django will make some optimizations so as not
@@ -121,12 +122,14 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+# If you set this to False, Django will not use timezone-aware datetimes.
+USE_TZ = True
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 MIDDLEWARE_CLASSES = [
@@ -144,13 +147,19 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.debug',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
+    'django.core.context_processors.i18n',
     'session_csrf.context_processor',
     'django.contrib.messages.context_processors.messages',
-    #'funfactory.context_processors.i18n',
-    #'funfactory.context_processors.globals',
     #'jingo_minify.helpers.build_ids',
     'django.core.context_processors.static',
 ]
+
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'templates'),
+)
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -158,6 +167,11 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
+
+FIXTURE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'fixtures'),
+)
+
 
 def custom_show_toolbar(request):
     return request.user.is_superuser
@@ -199,4 +213,7 @@ JINGO_EXCLUDE_APPS = [
     'debug_toolbar_user_panel',
     'memcache_toolbar',
 ]
+
+# The WSGI Application to use for runserver
+WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
