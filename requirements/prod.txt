@@ -28,7 +28,7 @@ Babel>=0.9.4
 python-memcached==1.48
 
 # Admin/development
-django-debug-toolbar==0.8.5
+django-debug-toolbar==0.9.4
 -e git://github.com/playfire/django-debug-toolbar-user-panel@b4606e2cc4e96d3509e7961927e7b71d23521684#egg=django_debug_toolbar_user_panel-dev
 -e git://github.com/ross/memcache-debug-panel@70943696dd42b2d9dc3f8a151818074e14320c82#egg=memcache_toolbar-dev
 

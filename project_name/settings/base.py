@@ -65,6 +65,17 @@ INSTALLED_APPS = [
     # Local apps, referenced via {{ project_name }}.appname
 ]
 
+# Place bcrypt first in the list, so it will be the default password hashing
+# mechanism
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+    'django.contrib.auth.hashers.CryptPasswordHasher',
+)
+
 # Sessions
 #
 # By default, be at least somewhat secure with our session cookies.
