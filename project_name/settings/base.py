@@ -1,7 +1,7 @@
 # This is your project's main settings file that can be committed to your
 # repo. If you need to override a setting locally, use local.py
 import os
-import memcache_toolbar.panels.memcache
+#import memcache_toolbar.panels.memcache
 
 # Your project root
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../../")
@@ -80,6 +80,9 @@ PASSWORD_HASHERS = (
 #
 # By default, be at least somewhat secure with our session cookies.
 SESSION_COOKIE_HTTPONLY = True
+
+# Set this to true if you are using https
+SESSION_COOKIE_SECURE = False
 
 ## Tests
 TEST_RUNNER = 'test_utils.runner.RadicalTestSuiteRunner'
