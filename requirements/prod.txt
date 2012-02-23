@@ -23,7 +23,7 @@ django-celery
 
 # L10n
 Babel>=0.9.4
--e git://github.com/clouserw/tower.git#egg=tower
+#-e git://github.com/clouserw/tower.git#egg=tower
 
 # Caching
 python-memcached==1.48
