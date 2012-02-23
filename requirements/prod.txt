@@ -12,7 +12,6 @@ GitPython==0.1.7
 Markdown==2.1.0
 
 # Security
--e git://github.com/fwenzel/django-sha2.git#egg=django-sha2
 -e git://github.com/jsocol/bleach.git#egg=bleach
 -e git://github.com/mozilla/django-session-csrf.git#egg=django-session-csrf
 cef==0.3
@@ -32,3 +31,7 @@ python-memcached==1.48
 django-debug-toolbar==0.8.5
 -e git://github.com/playfire/django-debug-toolbar-user-panel@b4606e2cc4e96d3509e7961927e7b71d23521684#egg=django_debug_toolbar_user_panel-dev
 -e git://github.com/ross/memcache-debug-panel@70943696dd42b2d9dc3f8a151818074e14320c82#egg=memcache_toolbar-dev
+
+# Various tidbits
+-e git://github.com/jsocol/commonware.git#egg=commonware
+-e git://github.com/mozilla/nuggets.git#egg=nuggets

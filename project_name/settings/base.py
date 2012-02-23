@@ -2,7 +2,6 @@
 # repo. If you need to override a setting locally, use local.py
 import os
 import memcache_toolbar.panels.memcache
-import logging
 
 # Your project root
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../../")
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
 
     # Django contrib apps
     'django.contrib.auth',
-    'django_sha2',  # Load after auth to monkey-patch it.
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
