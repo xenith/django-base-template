@@ -1,0 +1,16 @@
+# This file pulls in everything a developer needs. If it's a basic package
+# needed to run the site, it belongs in requirements/prod.txt. If it's a
+# package for developers (testing, docs, etc.), it goes in this file.
+-r prod.txt
+
+# Documentation
+Sphinx==1.0.7
+
+# Testing
+nose==1.0.0
+mock==0.7.2
+-e git://github.com/jbalogh/django-nose.git#egg=django_nose
+-e git://github.com/jbalogh/test-utils.git#egg=test-utils
+coverage==3.5.1
+pep8==0.6.1
+pylint==0.25.1
