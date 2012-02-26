@@ -35,3 +35,7 @@ django-debug-toolbar==0.9.4
 # Various tidbits
 -e git://github.com/jsocol/commonware.git#egg=commonware
 -e git://github.com/mozilla/nuggets.git#egg=nuggets
+
+# Logging
+#sentry==3.2.0
+raven>=1.4.4
