@@ -51,6 +51,7 @@ Admin:
  - memcache-debug-panel
 
 Testing:
+
 - nose and django-nose
 - pylint, pep8, and coverage
 
