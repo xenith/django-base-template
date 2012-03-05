@@ -20,26 +20,32 @@ and functionality in Django 1.4.
 By default, this template includes:
 
 Templating:
+
 - Jinja2 for templates
  - jingo to tie Jinja2 into Django
 - Markdown
 
 Security:
+
 - django-session-csrf
 - bleach
 - python-bcrypt2 - uses bcrypt for password hashing by default
 
 Background Tasks:
+
 - Celery
 
 Caching:
+
 - python-memcached
 
 From Mozilla Playdoh:
+
 - commonware
 - nuggets
 
 Admin:
+
 - Includes django-admin-toolbar for development and production (enabled for superusers)
  - django-debug-toolbar-user-panel
  - memcache-debug-panel
