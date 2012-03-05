@@ -15,12 +15,49 @@ and functionality in Django 1.4.
 
 [playdoh]: https://github.com/mozilla/playdoh
 
+## Features ##
+
+By default, this template includes:
+
+Templating:
+- Jinja2 for templates
+ - jingo to tie Jinja2 into Django
+- Markdown
+
+Security:
+- django-session-csrf
+- bleach
+- python-bcrypt2 - uses bcrypt for password hashing by default
+
+Background Tasks:
+- Celery
+
+Caching:
+- python-memcached
+
+From Mozilla Playdoh:
+- commonware
+- nuggets
+
+Admin:
+- Includes django-admin-toolbar for development and production (enabled for superusers)
+ - django-debug-toolbar-user-panel
+ - memcache-debug-panel
+
+Testing:
+- nose and django-nose
+- pylint, pep8, and coverage
+
+Any of these options can added or removed as you like after running django-admin.py startproject.
+
 ## How to use this template to create your project ##
 
 - Create your virtualenv
 - Install Django 1.4
-- django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md yourprojectname
-- pip install -r projectname/requirements/dev.txt
+- django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md projectname
+- cd projectname
+- Select your database adapter in requirements/compiled.txt (MySQL or Postgresql)
+- pip install -r requirements/dev.txt
 
 {% endif %}
 # {{ project_name|title }} Project #
