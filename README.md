@@ -19,6 +19,9 @@ and functionality in Django 1.4.
 
 By default, this template includes:
 
+A set of basic templates built from HTML5Boilerplate 3.0.3 and Twitter Bootstrap 2.0 (located in the
+base app)
+
 Templating:
 
 - Jinja2 for templates
