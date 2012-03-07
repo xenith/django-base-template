@@ -2,40 +2,44 @@
 -r compiled.txt
 
 # Django stuff
+# Install django directly from the repository for now, switch to 1.4 release later
 -e git://github.com/django/django#egg=django
-#-e git://github.com/django/django@1.3.X#egg=django
+#-e git://github.com/django/django@1.4.X#egg=django
 
 # Templates
--e git://github.com/jbalogh/jingo.git#egg=jingo
--e git://github.com/jsocol/jingo-minify.git#egg=jingo-minify
-GitPython==0.1.7
-Markdown==2.1.0
+jingo
+jingo-minify
+Markdown
 
 # Security
--e git://github.com/jsocol/bleach.git#egg=bleach
+bleach
 -e git://github.com/mozilla/django-session-csrf.git#egg=django-session-csrf
-cef==0.3
+cef
 
 # Celery: Message queue
 celery
 django-celery
 
 # L10n
-Babel>=0.9.4
+Babel
 #-e git://github.com/clouserw/tower.git#egg=tower
 
 # Caching
-python-memcached==1.48
+python-memcached
 
-# Admin/development
-django-debug-toolbar==0.9.4
--e git://github.com/playfire/django-debug-toolbar-user-panel@b4606e2cc4e96d3509e7961927e7b71d23521684#egg=django_debug_toolbar_user_panel-dev
--e git://github.com/ross/memcache-debug-panel@70943696dd42b2d9dc3f8a151818074e14320c82#egg=memcache_toolbar-dev
+# Admin
+django-debug-toolbar
+# There are useful addon modules for debug-toolbar, but have not quite been updated yet for 1.4
+#-e git://github.com/playfire/django-debug-toolbar-user-panel#egg=django_debug_toolbar_user_panel-dev
+#-e git://github.com/ross/memcache-debug-panel#egg=memcache_toolbar-dev
+
+# Migrations
+South
 
 # Various tidbits
 -e git://github.com/jsocol/commonware.git#egg=commonware
 -e git://github.com/mozilla/nuggets.git#egg=nuggets
 
 # Logging
-#sentry==3.2.0
+#sentry
 raven>=1.4.4

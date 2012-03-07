@@ -4,13 +4,13 @@
 -r prod.txt
 
 # Documentation
-Sphinx==1.0.7
+Sphinx
 
 # Testing
-nose==1.0.0
-mock==0.7.2
--e git://github.com/jbalogh/django-nose.git#egg=django_nose
+nose
+mock
+django-nose
 -e git://github.com/jbalogh/test-utils.git#egg=test-utils
-coverage==3.5.1
-pep8==0.6.1
-pylint==0.25.1
+coverage
+pep8
+pylint
