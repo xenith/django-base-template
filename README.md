@@ -8,7 +8,7 @@ experience with other Django layouts/templates. Playdoh is mainly setup for
 Mozilla's systems, and is currently only designed for Django 1.3. Some of the
 libraries bundled with Playdoh are also no longer necessary in Django 1.4.
 
-This template is designed for Django 1.4's new starproject template option.
+This template is designed for Django 1.4's new startproject template option.
 
 As much as I could, all the code has been updated to use the new suggested layout
 and functionality in Django 1.4.
