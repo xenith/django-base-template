@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import include, url, patterns
 from session_csrf import anonymous_csrf
 from django.contrib import admin
 admin.autodiscover()
@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/$', anonymous_csrf(admin.site.admin_view(admin.site.index))),
     (r'^admin/', include(admin.site.urls)),
-    url(r'^', include('debug_toolbar_user_panel.urls')),
+    #url(r'^', include('debug_toolbar_user_panel.urls')),
     (r'^bad/$', bad),
 )
 
