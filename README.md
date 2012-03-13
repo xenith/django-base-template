@@ -50,6 +50,7 @@ From Mozilla Playdoh:
 Admin:
 
 - Includes django-admin-toolbar for development and production (enabled for superusers)
+- Includes two debug-toolbar panels that are useful, but disabled until they support Django 1.4
  - django-debug-toolbar-user-panel
  - memcache-debug-panel
 
@@ -58,7 +59,7 @@ Testing:
 - nose and django-nose
 - pylint, pep8, and coverage
 
-Any of these options can added or removed as you like after running django-admin.py startproject.
+Any of these options can added, modified, or removed as you like after creating your project.
 
 ## How to use this template to create your project ##
 
@@ -66,11 +67,13 @@ Any of these options can added or removed as you like after running django-admin
 - Install Django 1.4
 - django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md projectname
 - cd projectname
-- Select your database adapter in requirements/compiled.txt (MySQL or Postgresql)
+- Select your database adapter in requirements/compiled.txt (MySQL, Postgresql, or stick with SQLite)
 - pip install -r requirements/dev.txt
 
 {% endif %}
 # {{ project_name|title }} Project #
+
+## About ##
 
 Describe your project here.
 
@@ -78,7 +81,7 @@ Describe your project here.
 
 - Python >= 2.5
 - pip
-- virtualenv (virtualenvwrapper is recommended for development)
+- virtualenv (virtualenvwrapper is recommended for use during development)
 
 ## Installation ##
 
