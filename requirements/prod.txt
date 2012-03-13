@@ -2,7 +2,7 @@
 -r compiled.txt
 
 # Django stuff
-# Install django directly from the repository for now, switch to 1.4 release later
+# Install django directly from the repository for now, switch to 1.4 once it is released
 -e git://github.com/django/django#egg=django
 #-e git://github.com/django/django@1.4.X#egg=django
 
@@ -13,15 +13,20 @@ Markdown
 
 # Security
 bleach
+# Pull from the repository until the release version works with Django 1.4
 -e git://github.com/mozilla/django-session-csrf.git#egg=django-session-csrf
-cef
+#django-session-csrf
+#cef
+
+# Logging
+#raven
 
 # Celery: Message queue
 celery
 django-celery
 
-# L10n
-Babel
+# L10n/i18n
+#Babel
 #-e git://github.com/clouserw/tower.git#egg=tower
 
 # Caching
@@ -29,7 +34,7 @@ python-memcached
 
 # Admin
 django-debug-toolbar
-# There are useful addon modules for debug-toolbar, but have not quite been updated yet for 1.4
+# There are useful panels for debug-toolbar, but have not quite been updated yet for 1.4
 #-e git://github.com/playfire/django-debug-toolbar-user-panel#egg=django_debug_toolbar_user_panel-dev
 #-e git://github.com/ross/memcache-debug-panel#egg=memcache_toolbar-dev
 
@@ -40,6 +45,3 @@ South
 -e git://github.com/jsocol/commonware.git#egg=commonware
 -e git://github.com/mozilla/nuggets.git#egg=nuggets
 
-# Logging
-#sentry
-raven>=1.4.4

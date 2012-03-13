@@ -54,7 +54,7 @@ From Mozilla Playdoh:
 Admin:
 
 - Includes django-admin-toolbar for development and production (enabled for superusers)
-- Includes two debug-toolbar panels that are useful, but disabled until they support Django 1.4
+- Includes two debug-toolbar panels that are useful, but are disabled until they support Django 1.4
  - django-debug-toolbar-user-panel
  - memcache-debug-panel
 
