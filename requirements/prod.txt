@@ -2,9 +2,7 @@
 -r compiled.txt
 
 # Django stuff
-# Install django directly from the repository for now, switch to 1.4 once it is released
--e git://github.com/django/django#egg=django
-#-e git://github.com/django/django@1.4.X#egg=django
+Django>=1.4
 
 # Templates
 jingo
