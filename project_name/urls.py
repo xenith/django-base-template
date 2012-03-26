@@ -1,5 +1,7 @@
+""" Default urlconf for {{ project_name }} """
+
 from django.conf import settings
-from django.conf.urls.defaults import include, url, patterns
+from django.conf.urls.defaults import include, patterns
 from session_csrf import anonymous_csrf
 from django.contrib import admin
 admin.autodiscover()
@@ -7,6 +9,7 @@ admin.autodiscover()
 # django-session-csrf monkeypatcher
 import session_csrf
 session_csrf.monkeypatch()
+
 
 def bad(request):
     """ Simulates a server error """

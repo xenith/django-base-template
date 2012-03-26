@@ -1,5 +1,8 @@
-# This is your project's main settings file that can be committed to your
-# repo. If you need to override a setting locally, use local.py
+"""
+This is your project's main settings file that can be committed to your
+repo. If you need to override a setting locally, use local.py
+"""
+
 import os
 #import memcache_toolbar.panels.memcache
 
@@ -154,7 +157,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
 ]
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Put strings here, like "/home/html/django_templates" or
+    # "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_ROOT, 'templates'),
@@ -173,6 +177,7 @@ FIXTURE_DIRS = (
 
 
 def custom_show_toolbar(request):
+    """ Only show the debug toolbar to users with the superuser flag. """
     return request.user.is_superuser
 
 

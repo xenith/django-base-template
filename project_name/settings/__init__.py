@@ -1,3 +1,5 @@
+""" Settings for {{ project_name }} """
+
 from .base import *
 try:
     from .local import *

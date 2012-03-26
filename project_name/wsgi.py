@@ -14,9 +14,9 @@ framework.
 
 """
 import os
-import sys
-import site
-import subprocess
+#import sys
+#import site
+#import subprocess
 
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../")
@@ -61,4 +61,3 @@ application = get_wsgi_application()
 # Apply WSGI middleware here.
 # from helloworld.wsgi import HelloWorldApplication
 # application = HelloWorldApplication(application)
-

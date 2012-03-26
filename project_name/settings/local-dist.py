@@ -1,5 +1,8 @@
-# This is an example settings/local.py file.
-# These settings overrides what's in settings/base.py
+"""
+This is an example settings/local.py file.
+These settings overrides what's in settings/base.py
+"""
+
 import logging
 
 # To extend any settings from settings/base.py here's an example:
@@ -69,7 +72,7 @@ LOG_LEVEL = logging.INFO
 HAS_SYSLOG = True
 SYSLOG_TAG = "http_app_{{ project_name }}"  # Make this unique to your project.
 LOGGING_CONFIG = None
-LOGGING = dict(loggers=dict({{ project_name }}={'level': logging.DEBUG}))
+#LOGGING = dict(loggers=dict({{ project_name }}={'level': logging.DEBUG}))
 
 # Common Event Format logging parameters
 #CEF_PRODUCT = '{{ project_name }}'

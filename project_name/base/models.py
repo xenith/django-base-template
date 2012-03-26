@@ -1,1 +1,1 @@
-"""Basic models, such as user profile"""
+""" Basic models, such as user profile """
