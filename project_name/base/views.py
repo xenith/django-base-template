@@ -1,3 +1,5 @@
+"""Views for the base application"""
+
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
