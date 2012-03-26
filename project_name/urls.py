@@ -4,6 +4,9 @@ from session_csrf import anonymous_csrf
 from django.contrib import admin
 admin.autodiscover()
 
+# django-session-csrf monkeypatcher
+import session_csrf
+session_csrf.monkeypatch()
 
 def bad(request):
     """ Simulates a server error """

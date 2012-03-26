@@ -11,9 +11,7 @@ Markdown
 
 # Security
 bleach
-# Pull from the repository until the release version works with Django 1.4
--e git://github.com/mozilla/django-session-csrf.git#egg=django-session-csrf
-#django-session-csrf
+django-session-csrf
 #cef
 
 # Logging
@@ -40,6 +38,6 @@ django-debug-toolbar
 South
 
 # Various tidbits
--e git://github.com/jsocol/commonware.git#egg=commonware
+commonware
 -e git://github.com/mozilla/nuggets.git#egg=nuggets
 
