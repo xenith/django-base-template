@@ -71,8 +71,16 @@ SECRET_KEY = '{{ secret_key }}'
 LOG_LEVEL = logging.INFO
 HAS_SYSLOG = True
 SYSLOG_TAG = "http_app_{{ project_name }}"  # Make this unique to your project.
+# Remove this configuration variable to use your custom logging configuration
 LOGGING_CONFIG = None
-#LOGGING = dict(loggers=dict({{ project_name }}={'level': logging.DEBUG}))
+LOGGING = {
+    'version': 1,
+    'loggers': {
+        '{{ project_name }}': {
+            'level': "DEBUG"
+        }
+    }
+}
 
 # Common Event Format logging parameters
 #CEF_PRODUCT = '{{ project_name }}'
