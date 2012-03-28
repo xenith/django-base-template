@@ -62,6 +62,9 @@ INSTALLED_APPS = [
     #'debug_toolbar_user_panel',
     #'memcache_toolbar',
 
+    # Database migrations
+    'south',
+
     # Application base, containing global templates.
     '{{ project_name }}.base',
 

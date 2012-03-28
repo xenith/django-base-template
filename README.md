@@ -75,6 +75,7 @@ Any of these options can added, modified, or removed as you like after creating 
 - $ pip install -r requirements/dev.txt
 - $ cp projectname/settings/local-dist.py projectname/settings/local.py (local.py shouldn't be added
   to your source control)
+- $ ./manage.py syncdb
 - $ ./manage.py runserver
 
 {% endif %}
