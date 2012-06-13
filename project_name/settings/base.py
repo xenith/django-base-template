@@ -216,6 +216,7 @@ FILE_UPLOAD_PERMISSIONS = 0664
 # apps here:
 JINGO_EXCLUDE_APPS = [
     'admin',
+    'registration',
     'debug_toolbar',
     'debug_toolbar_user_panel',
     'memcache_toolbar',
