@@ -1,4 +1,4 @@
-# Choose your databses adapter
+# Choose your databases adapter
 #psycopg2
 #MySQL-python
 
