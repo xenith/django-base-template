@@ -69,7 +69,7 @@ Any of these options can added, modified, or removed as you like after creating 
 
 - Create your virtualenv
 - Install Django 1.4
-- $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md projectname
+- $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/django-1.4 --extension py,md projectname
 - $ cd projectname
 - Select your database adapter in requirements/compiled.txt (MySQL, Postgresql, or stick with SQLite)
 - $ pip install -r requirements/dev.txt
