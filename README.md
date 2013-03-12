@@ -26,6 +26,7 @@ Templating:
 - Jinja2 for templates
  - jingo to tie Jinja2 into Django
 - Markdown
+- django_compressor for compressing css/js/less/sass
 
 Security:
 

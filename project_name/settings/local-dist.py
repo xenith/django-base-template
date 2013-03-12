@@ -6,8 +6,8 @@ These settings overrides what's in settings/base.py
 import logging
 
 # To extend any settings from settings/base.py here's an example:
-#from . import base
-#INSTALLED_APPS = base.INSTALLED_APPS + ['debug_toolbar']
+from . import base
+INSTALLED_APPS = base.INSTALLED_APPS + [''django_nose',']
 
 DATABASES = {
     'default': {

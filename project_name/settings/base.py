@@ -4,26 +4,9 @@ repo. If you need to override a setting locally, use local.py
 """
 
 import os
-#import memcache_toolbar.panels.memcache
 
 # Your project root
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../../")
-
-# Bundles is a dictionary of two dictionaries, css and js, which list css files
-# and js files that can be bundled together by the minify app.
-MINIFY_BUNDLES = {
-    'css': {
-        'base_css': (
-            'css/style.css',
-        ),
-    },
-    'js': {
-        'libs_js': (
-            'js/libs/jquery-1.6.2.min.js',
-            'js/libs/modernizr-2.0.6.min.js',
-        ),
-    }
-}
 
 SUPPORTED_NONLOCALES = ['media', 'admin', 'static']
 
@@ -37,9 +20,6 @@ SITE_ID = 1
 ROOT_URLCONF = '{{ project_name }}.urls'
 
 INSTALLED_APPS = [
-    # Template apps
-    'jingo_minify',
-
     # Django contrib apps
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,11 +36,9 @@ INSTALLED_APPS = [
     # Third-party apps, patches, fixes
     'commonware.response.cookies',
     'djcelery',
-    'django_nose',
-    'session_csrf',
     'debug_toolbar',
+	'compressor',
     #'debug_toolbar_user_panel',
-    #'memcache_toolbar',
 
     # Database migrations
     'south',
@@ -135,13 +113,14 @@ USE_TZ = True
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+	'compressor.finders.CompressorFinder',
 )
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'session_csrf.CsrfMiddleware',  # Must be after auth middleware.
+	'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'commonware.middleware.FrameOptionsHeader',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -154,9 +133,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
     'django.core.context_processors.static',
-    'session_csrf.context_processor',
+	'django.core.context_processors.csrf',
     'django.contrib.messages.context_processors.messages',
-    #'jingo_minify.helpers.build_ids',
 ]
 
 TEMPLATE_DIRS = (
@@ -172,10 +150,6 @@ TEMPLATE_LOADERS = (
     'jingo.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-)
-
-FIXTURE_DIRS = (
-    os.path.join(PROJECT_ROOT, 'fixtures'),
 )
 
 
@@ -195,7 +169,6 @@ DEBUG_TOOLBAR_CONFIG = {
 
 DEBUG_TOOLBAR_PANELS = (
     #'debug_toolbar_user_panel.panels.UserPanel',
-    #'memcache_toolbar.panels.memcache.MemcachePanel',
     'debug_toolbar.panels.version.VersionDebugPanel',
     'debug_toolbar.panels.timer.TimerDebugPanel',
     'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
@@ -207,8 +180,8 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.logger.LoggingPanel',
 )
 
-# Specify a model to use for user profiles, if desired.
-#AUTH_PROFILE_MODULE = '{{ project_name }}.accounts.UserProfile'
+# Specify a custom user model to use 
+#AUTH_USER_MODEL = '{{ project_name }}.accounts.MyUser'
 
 FILE_UPLOAD_PERMISSIONS = 0664
 
@@ -219,7 +192,6 @@ JINGO_EXCLUDE_APPS = [
     'registration',
     'debug_toolbar',
     'debug_toolbar_user_panel',
-    'memcache_toolbar',
 ]
 
 # The WSGI Application to use for runserver
