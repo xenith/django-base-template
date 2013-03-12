@@ -1,17 +1,16 @@
 {% if False %}
-# Django 1.4 Base Template #
+# Django 1.5 Base Template #
 
 ## About ##
 
 This template is based off of the work of [Mozilla Playdoh][playdoh], as well as
 experience with other Django layouts/templates. Playdoh is mainly setup for
-Mozilla's systems, and is currently only designed for Django 1.3. Some of the
-libraries bundled with Playdoh are also no longer necessary in Django 1.4.
+Mozilla's systems, and is currently only designed for Django 1.4.
 
-This template is designed for Django 1.4's new startproject template option.
+This template is designed for Django 1.4's new startproject template option. This version of the template is designed for Django 1.5.
 
 As much as I could, all the code has been updated to use the new suggested layout
-and functionality in Django 1.4.
+and functionality in Django 1.5.
 
 [playdoh]: https://github.com/mozilla/playdoh
 
@@ -30,7 +29,6 @@ Templating:
 
 Security:
 
-- django-session-csrf
 - bleach
 - python-bcrypt2 - uses bcrypt for password hashing by default
 
@@ -54,9 +52,7 @@ From Mozilla Playdoh:
 Admin:
 
 - Includes django-admin-toolbar for development and production (enabled for superusers)
-- Includes two debug-toolbar panels that are useful, but are disabled until they support Django 1.4
- - django-debug-toolbar-user-panel
- - memcache-debug-panel
+- Includes django-debug-toolbar-user-panel, which is quite useful, but is disabled until it fully supports Django 1.5
 
 Testing:
 
@@ -68,7 +64,7 @@ Any of these options can added, modified, or removed as you like after creating 
 ## How to use this template to create your project ##
 
 - Create your virtualenv
-- Install Django 1.4
+- Install Django 1.5 ($ pip install Django>=1.5)
 - $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md projectname
 - $ cd projectname
 - Select your database adapter in requirements/compiled.txt (MySQL, Postgresql, or stick with SQLite)
@@ -87,7 +83,7 @@ Describe your project here.
 
 ## Prerequisites ##
 
-- Python >= 2.5
+- Python >= 2.6
 - pip
 - virtualenv (virtualenvwrapper is recommended for use during development)
 

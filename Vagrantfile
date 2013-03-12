@@ -16,8 +16,8 @@ CONF = _config
 MOUNT_POINT = '/home/vagrant/project'
 
 Vagrant::Config.run do |config|
-    config.vm.box = "lucid32"
-    config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+    config.vm.box = "precise64"
+    config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     config.vm.forward_port 8000, 8000
 
@@ -36,8 +36,8 @@ Vagrant::Config.run do |config|
     # Add to /etc/hosts: 33.33.33.24 dev.example.com
     config.vm.network :hostonly, "33.33.33.24"
 
-    config.vm.provision :puppet do |puppet|
-        puppet.manifests_path = "puppet/manifests"
-        puppet.manifest_file  = "vagrant.pp"
-    end
+    #config.vm.provision :puppet do |puppet|
+    #    puppet.manifests_path = "puppet/manifests"
+    #    puppet.manifest_file  = "vagrant.pp"
+    #end
 end
