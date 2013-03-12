@@ -19,6 +19,7 @@ SITE_ID = 1
 # Defines the views served for root URLs.
 ROOT_URLCONF = '{{ project_name }}.urls'
 
+# Application definition
 INSTALLED_APPS = [
     # Django contrib apps
     'django.contrib.auth',
@@ -37,7 +38,7 @@ INSTALLED_APPS = [
     'commonware.response.cookies',
     'djcelery',
     'debug_toolbar',
-	'compressor',
+    'compressor',
     #'debug_toolbar_user_panel',
 
     # Database migrations
@@ -113,15 +114,17 @@ USE_TZ = True
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-	'compressor.finders.CompressorFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 MIDDLEWARE_CLASSES = [
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-	'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'commonware.middleware.FrameOptionsHeader',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
@@ -133,7 +136,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.request',
     'django.core.context_processors.i18n',
     'django.core.context_processors.static',
-	'django.core.context_processors.csrf',
+    'django.core.context_processors.csrf',
     'django.contrib.messages.context_processors.messages',
 ]
 
@@ -180,7 +183,7 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.logger.LoggingPanel',
 )
 
-# Specify a custom user model to use 
+# Specify a custom user model to use
 #AUTH_USER_MODEL = '{{ project_name }}.accounts.MyUser'
 
 FILE_UPLOAD_PERMISSIONS = 0664

@@ -46,6 +46,7 @@ MANAGERS = ADMINS
 # system time zone.
 TIME_ZONE = 'America/Los_Angeles'
 
+# SECURITY WARNING: don't run with debug turned on in production!
 # Debugging displays nice error messages, but leaks memory. Set this to False
 # on all server instances and True only for development.
 DEBUG = TEMPLATE_DEBUG = True
@@ -54,7 +55,13 @@ DEBUG = TEMPLATE_DEBUG = True
 # instances and False on stage/prod.
 DEV = True
 
-# Make this unique, and don't share it with anybody.  It cannot be blank.
+# Hosts/domain names that are valid for this site; required if DEBUG is False
+# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = []
+
+# SECURITY WARNING: keep the secret key used in production secret!
+# Hardcoded values can leak through source control. Consider loading
+# the secret key from an environment variable or a file instead.
 SECRET_KEY = '{{ secret_key }}'
 
 # Uncomment these to activate and customize Celery:
