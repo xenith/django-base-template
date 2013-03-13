@@ -1,8 +1,8 @@
 ========================================
-Welcome to this project's documentation!
+Welcome to {{ project_name }}'s documentation!
 ========================================
 
-This is a documentation template for a **web application using Django 1.4**.
+This is a documentation template for a **web application using Django 1.5**.
 Feel free to change this to your liking.
 
 

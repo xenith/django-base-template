@@ -3,9 +3,10 @@
 
 ## About ##
 
-This template is based off of the work of [Mozilla Playdoh][playdoh], as well as
-experience with other Django layouts/templates. Playdoh is mainly setup for
-Mozilla's systems, and is currently only designed for Django 1.4.
+This template is based off of the work of [Mozilla Playdoh][playdoh] and
+[Two Scoops of Django][twoscoops], as well as experience with other Django
+layouts/templates. Playdoh is mainly setup for Mozilla's systems, and is
+currently only designed for Django 1.4.
 
 This template is designed for Django 1.4's new startproject template option. This version of the template is designed for Django 1.5.
 
@@ -13,6 +14,7 @@ As much as I could, all the code has been updated to use the new suggested layou
 and functionality in Django 1.5.
 
 [playdoh]: https://github.com/mozilla/playdoh
+[twoscoops]: https://github.com/twoscoops/django-twoscoops-project
 
 ## Features ##
 
@@ -64,12 +66,12 @@ Any of these options can added, modified, or removed as you like after creating 
 
 ## How to use this template to create your project ##
 
-- Create your virtualenv
+- Create your working environment and virtualenv
 - Install Django 1.5 ($ pip install Django>=1.5)
-- $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md projectname
+- $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md,rst,html projectname
 - $ cd projectname
 - Select your database adapter in requirements/compiled.txt (MySQL, Postgresql, or stick with SQLite)
-- $ pip install -r requirements/dev.txt
+- $ pip install -r requirements/local.txt
 - $ cp projectname/settings/local-dist.py projectname/settings/local.py (local.py shouldn't be added
   to your source control)
 - $ ./manage.py syncdb
