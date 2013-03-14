@@ -268,9 +268,9 @@ DEV = False
 ALLOWED_HOSTS = []
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# Hardcoded values can leak through source control. Consider loading
-# the secret key from an environment variable or a file instead.
-SECRET_KEY = '{{ secret_key }}'
+# Hardcoded values can leak through source control. This is an example method
+# of getting the value from an environment setting.
+SECRET_KEY = get_env_setting('SECRET_KEY')
 
 # Uncomment these to activate and customize Celery:
 # CELERY_ALWAYS_EAGER = False  # required to activate celeryd
