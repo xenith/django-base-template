@@ -3,11 +3,10 @@ This is an example settings/local.py file.
 These settings overrides what's in settings/base.py
 """
 
-import logging
+from .base import *
 
-# To extend any settings from settings/base.py here's an example:
-from . import base
-INSTALLED_APPS = base.INSTALLED_APPS + [''django_nose',']
+
+INSTALLED_APPS += ('django_nose,')
 
 DATABASES = {
     'default': {
@@ -30,21 +29,19 @@ DATABASES = {
     # },
 }
 
-# Uncomment this and set to all slave DBs in use on the site.
-# SLAVE_DATABASES = ['slave']
-
 # Recipients of traceback emails and other notifications.
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
 MANAGERS = ADMINS
 
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
-TIME_ZONE = 'America/Los_Angeles'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Debugging displays nice error messages, but leaks memory. Set this to False
@@ -89,20 +86,7 @@ LOGGING = {
     }
 }
 
-# Common Event Format logging parameters
-#CEF_PRODUCT = '{{ project_name }}'
-#CEF_VENDOR = 'Your Company'
-#CEF_VERSION = '0'
-#CEF_DEVICE_VERSION = '0'
-
 INTERNAL_IPS = ('127.0.0.1')
-
-# Enable these options for memcached
-#CACHE_BACKEND= "memcached://127.0.0.1:11211/"
-#CACHE_MIDDLEWARE_ANONYMOUS_ONLY=True
-
-# Set this to true if you use a proxy that sets X-Forwarded-Host
-#USE_X_FORWARDED_HOST = False
 
 SERVER_EMAIL = "webmaster@example.com"
 DEFAULT_FROM_EMAIL = "webmaster@example.com"

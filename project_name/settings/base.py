@@ -4,6 +4,21 @@ repo. If you need to override a setting locally, use local.py
 """
 
 import os
+import logging
+
+# Normally you should not import ANYTHING from Django directly
+# into your settings, but ImproperlyConfigured is an exception.
+from django.core.exceptions import ImproperlyConfigured
+
+
+def get_env_setting(setting):
+    """ Get the environment setting or return exception """
+    try:
+        return os.environ[setting]
+    except KeyError:
+        error_msg = "Set the %s env variable" % setting
+        raise ImproperlyConfigured(error_msg)
+
 
 # Your project root
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../../")
@@ -20,7 +35,7 @@ SITE_ID = 1
 ROOT_URLCONF = '{{ project_name }}.urls'
 
 # Application definition
-INSTALLED_APPS = [
+INSTALLED_APPS = (
     # Django contrib apps
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +63,7 @@ INSTALLED_APPS = [
     '{{ project_name }}.base',
 
     # Local apps, referenced via {{ project_name }}.appname
-]
+)
 
 # Place bcrypt first in the list, so it will be the default password hashing
 # mechanism
@@ -109,6 +124,13 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+# Local time zone for this installation. Choices can be found here:
+# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
+# although not all choices may be available on all operating systems.
+# If running in a Windows environment this must be set to the same as your
+# system time zone.
+TIME_ZONE = 'America/Los_Angeles'
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -137,6 +159,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.i18n',
     'django.core.context_processors.static',
     'django.core.context_processors.csrf',
+    'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
 ]
 
@@ -199,3 +222,96 @@ JINGO_EXCLUDE_APPS = [
 
 # The WSGI Application to use for runserver
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
+
+# Define your database connections
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+        #'OPTIONS': {
+        #    'init_command': 'SET storage_engine=InnoDB',
+        #    'charset' : 'utf8',
+        #    'use_unicode' : True,
+        #},
+        #'TEST_CHARSET': 'utf8',
+        #'TEST_COLLATION': 'utf8_general_ci',
+    },
+    # 'slave': {
+    #     ...
+    # },
+}
+
+# Uncomment this and set to all slave DBs in use on the site.
+# SLAVE_DATABASES = ['slave']
+
+# Recipients of traceback emails and other notifications.
+ADMINS = (
+    # ('Your Name', 'your_email@domain.com'),
+)
+MANAGERS = ADMINS
+
+# SECURITY WARNING: don't run with debug turned on in production!
+# Debugging displays nice error messages, but leaks memory. Set this to False
+# on all server instances and True only for development.
+DEBUG = TEMPLATE_DEBUG = False
+
+# Is this a development instance? Set this to True on development/master
+# instances and False on stage/prod.
+DEV = False
+
+# Hosts/domain names that are valid for this site; required if DEBUG is False
+# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = []
+
+# SECURITY WARNING: keep the secret key used in production secret!
+# Hardcoded values can leak through source control. Consider loading
+# the secret key from an environment variable or a file instead.
+SECRET_KEY = '{{ secret_key }}'
+
+# Uncomment these to activate and customize Celery:
+# CELERY_ALWAYS_EAGER = False  # required to activate celeryd
+# BROKER_HOST = 'localhost'
+# BROKER_PORT = 5672
+# BROKER_USER = 'django'
+# BROKER_PASSWORD = 'django'
+# BROKER_VHOST = 'django'
+# CELERY_RESULT_BACKEND = 'amqp'
+
+INTERNAL_IPS = ('127.0.0.1')
+
+# Enable these options for memcached
+#CACHE_BACKEND= "memcached://127.0.0.1:11211/"
+#CACHE_MIDDLEWARE_ANONYMOUS_ONLY=True
+
+# Set this to true if you use a proxy that sets X-Forwarded-Host
+#USE_X_FORWARDED_HOST = False
+
+SERVER_EMAIL = "webmaster@example.com"
+DEFAULT_FROM_EMAIL = "webmaster@example.com"
+SYSTEM_EMAIL_PREFIX = "[{{ project_name }}]"
+
+## Log settings
+
+LOG_LEVEL = logging.INFO
+HAS_SYSLOG = True
+SYSLOG_TAG = "http_app_{{ project_name }}"  # Make this unique to your project.
+# Remove this configuration variable to use your custom logging configuration
+LOGGING_CONFIG = None
+LOGGING = {
+    'version': 1,
+    'loggers': {
+        '{{ project_name }}': {
+            'level': "DEBUG"
+        }
+    }
+}
+
+# Common Event Format logging parameters
+#CEF_PRODUCT = '{{ project_name }}'
+#CEF_VENDOR = 'Your Company'
+#CEF_VERSION = '0'
+#CEF_DEVICE_VERSION = '0'
