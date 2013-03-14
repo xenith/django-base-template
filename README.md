@@ -68,7 +68,7 @@ Any of these options can added, modified, or removed as you like after creating 
 
 - Create your working environment and virtualenv
 - Install Django 1.5 ($ pip install Django>=1.5)
-- $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md,rst,html projectname
+- $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md,rst projectname
 - $ cd projectname
 - Select your database adapter in requirements/compiled.txt (MySQL, Postgresql, or stick with SQLite)
 - $ pip install -r requirements/local.txt
