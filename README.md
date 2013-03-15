@@ -25,8 +25,6 @@ base app)
 
 Templating:
 
-- Jinja2 for templates
- - jingo to tie Jinja2 into Django
 - Markdown
 - django_compressor for compressing css/js/less/sass
 
@@ -70,7 +68,7 @@ Any of these options can added, modified, or removed as you like after creating 
 - Install Django 1.5 ($ pip install Django>=1.5)
 - $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md,rst projectname
 - $ cd projectname
-- Select your database adapter in requirements/compiled.txt (MySQL, Postgresql, or stick with SQLite)
+- Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
 - $ pip install -r requirements/local.txt
 - $ cp projectname/settings/local-dist.py projectname/settings/local.py (local.py shouldn't be added
   to your source control)

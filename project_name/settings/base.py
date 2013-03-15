@@ -173,7 +173,6 @@ TEMPLATE_DIRS = (
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'jingo.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
@@ -210,15 +209,6 @@ DEBUG_TOOLBAR_PANELS = (
 #AUTH_USER_MODEL = '{{ project_name }}.accounts.MyUser'
 
 FILE_UPLOAD_PERMISSIONS = 0664
-
-# Because Jinja2 is the default template loader, add any non-Jinja templated
-# apps here:
-JINGO_EXCLUDE_APPS = [
-    'admin',
-    'registration',
-    'debug_toolbar',
-    'debug_toolbar_user_panel',
-]
 
 # The WSGI Application to use for runserver
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'

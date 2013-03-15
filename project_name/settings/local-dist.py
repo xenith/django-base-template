@@ -3,10 +3,11 @@ This is an example settings/local.py file.
 These settings overrides what's in settings/base.py
 """
 
-from .base import *
+from . import base
 
 
-INSTALLED_APPS += ('django_nose,')
+# To extend any settings from settings/base.py here's an example:
+INSTALLED_APPS = base.INSTALLED_APPS + ('django_nose',)
 
 DATABASES = {
     'default': {
@@ -72,9 +73,6 @@ SECRET_KEY = '{{ secret_key }}'
 
 ## Log settings
 
-LOG_LEVEL = logging.INFO
-HAS_SYSLOG = True
-SYSLOG_TAG = "http_app_{{ project_name }}"  # Make this unique to your project.
 # Remove this configuration variable to use your custom logging configuration
 LOGGING_CONFIG = None
 LOGGING = {
@@ -87,7 +85,3 @@ LOGGING = {
 }
 
 INTERNAL_IPS = ('127.0.0.1')
-
-SERVER_EMAIL = "webmaster@example.com"
-DEFAULT_FROM_EMAIL = "webmaster@example.com"
-SYSTEM_EMAIL_PREFIX = "[{{ project_name }}]"
