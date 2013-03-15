@@ -20,7 +20,7 @@ and functionality in Django 1.5.
 
 By default, this template includes:
 
-A set of basic templates built from HTML5Boilerplate 3.0.3 and Twitter Bootstrap 2.0 (located in the
+A set of basic templates built from HTML5Boilerplate 4.1.0 and Twitter Bootstrap 2.3.1 (located in the
 base app)
 
 Templating:
