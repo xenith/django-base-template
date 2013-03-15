@@ -51,7 +51,7 @@ def install_dependencies():
     ensure_virtualenv()
     with virtualenv(env.virtualenv):
         with cd(env.code_dir):
-            run_venv("pip install -r requirements/prod.txt")
+            run_venv("pip install -r requirements/production.txt")
 
 
 def ensure_virtualenv():
