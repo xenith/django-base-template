@@ -258,9 +258,11 @@ DEV = False
 ALLOWED_HOSTS = []
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# Hardcoded values can leak through source control. This is an example method
-# of getting the value from an environment setting.
-SECRET_KEY = get_env_setting('SECRET_KEY')
+# Hardcoded values can leak through source control.
+# This is an example method of getting the value from an environment setting.
+# Uncomment to use, and then make sure you set the SECRET_KEY environment variable.
+# This is good to use in production, and on services that support it such as Heroku.
+#SECRET_KEY = get_env_setting('SECRET_KEY')
 
 # Uncomment these to activate and customize Celery:
 # CELERY_ALWAYS_EAGER = False  # required to activate celeryd
