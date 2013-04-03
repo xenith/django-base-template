@@ -203,7 +203,7 @@ DEBUG_TOOLBAR_PANELS = (
 )
 
 # Specify a custom user model to use
-#AUTH_USER_MODEL = '{{ project_name }}.accounts.MyUser'
+#AUTH_USER_MODEL = 'accounts.MyUser'
 
 FILE_UPLOAD_PERMISSIONS = 0664
 
