@@ -45,11 +45,6 @@ Caching:
 
 - python-memcached
 
-From Mozilla Playdoh:
-
-- commonware
-- nuggets
-
 Admin:
 
 - Includes django-admin-toolbar for development and production (enabled for superusers)
