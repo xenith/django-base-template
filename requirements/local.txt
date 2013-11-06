@@ -1,5 +1,5 @@
 # This file pulls in everything a developer needs. If it's a basic package
-# needed to run the site, it belongs in requirements/prod.txt. If it's a
+# needed to run the site, it belongs in requirements/production.txt. If it's a
 # package for developers (testing, docs, etc.), it goes in this file.
 -r production.txt
 
@@ -16,5 +16,3 @@ django-nose
 coverage
 pep8
 pylint
-django-discover-runner
-

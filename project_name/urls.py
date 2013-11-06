@@ -12,10 +12,10 @@ def bad(request):
     1 / 0
 
 urlpatterns = patterns('',
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/$', admin.site.admin_view(admin.site.index)),
+    # Examples:
+    # url(r'^$', '{{ project_name }}.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^', include('debug_toolbar_user_panel.urls')),
     url(r'^bad/$', bad),
     url(r'', include('base.urls')),
 )

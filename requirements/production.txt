@@ -2,10 +2,9 @@
 -r compiled.txt
 
 # Django stuff
-Django>=1.5
+Django>=1.6
 
 # Templates
-Markdown
 django_compressor
 
 # Security
@@ -28,12 +27,9 @@ python-memcached
 
 # Admin
 django-debug-toolbar
-# There are useful panels for debug-toolbar, but have not quite been updated yet for 1.5
-#-e git://github.com/playfire/django-debug-toolbar-user-panel#egg=django_debug_toolbar_user_panel-dev
 
 # Migrations
 South
 
 # Feature testing
 #django-waffle
-

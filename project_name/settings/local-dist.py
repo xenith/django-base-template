@@ -6,7 +6,9 @@ These settings overrides what's in settings/base.py
 from . import base
 
 
-# To extend any settings from settings/base.py here's an example:
+# To extend any settings from settings/base.py here's an example.
+# If you don't need to extend any settings from base.py, you do not need
+# to import base above
 INSTALLED_APPS = base.INSTALLED_APPS + ('django_nose',)
 
 DATABASES = {

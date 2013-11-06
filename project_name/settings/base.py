@@ -29,8 +29,6 @@ SUPPORTED_NONLOCALES = ['media', 'admin', 'static']
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 1
-
 # Defines the views served for root URLs.
 ROOT_URLCONF = '{{ project_name }}.urls'
 
@@ -40,11 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'django.contrib.admindocs',
-    'django.contrib.markup',
     'django.contrib.humanize',
     'django.contrib.syndication',
     'django.contrib.staticfiles',
@@ -53,7 +48,6 @@ INSTALLED_APPS = (
     'djcelery',
     'debug_toolbar',
     'compressor',
-    #'debug_toolbar_user_panel',
 
     # Database migrations
     'south',
@@ -67,6 +61,7 @@ INSTALLED_APPS = (
 # Place bcrypt first in the list, so it will be the default password hashing
 # mechanism
 PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.BCryptPasswordHasher',
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
@@ -270,9 +265,8 @@ ALLOWED_HOSTS = []
 
 INTERNAL_IPS = ('127.0.0.1')
 
-# Enable these options for memcached
+# Enable this option for memcached
 #CACHE_BACKEND= "memcached://127.0.0.1:11211/"
-#CACHE_MIDDLEWARE_ANONYMOUS_ONLY=True
 
 # Set this to true if you use a proxy that sets X-Forwarded-Host
 #USE_X_FORWARDED_HOST = False
