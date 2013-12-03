@@ -10,8 +10,6 @@ Vagrant.configure("2") do |config|
     # # Add to /etc/hosts: 33.33.33.24 dev.example.com
     # config.vm.network :hostonly, "33.33.33.24"
 
-    #config.vm.provision :puppet do |puppet|
-    #    puppet.manifests_path = "puppet/manifests"
-    #    puppet.manifest_file  = "vagrant.pp"
-    #end
+    # provision with simple shell script
+    config.vm.provision "shell", path: "install_requirements.sh"
 end
