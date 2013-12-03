@@ -1,4 +1,5 @@
 {% load compress %}
+{% load staticfiles %}
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -19,26 +20,28 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
+  {% block meta %}
+  {% endblock %}
+
+  {# use the CDN to get bootstrap css. can not be inside compress css block #}
+  {% block cdn_css %}
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap.min.css">
+  {% endblock cdn_css %}
+
   {% compress css %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
   {% block css %}{% endblock %}
   {% endcompress %}
-  <style>
-    body {
-      padding-top: 60px;
-      padding-bottom: 40px;
-    }
-  </style>
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   {% compress js %}
-  <script src="{{ STATIC_URL }}js/libs/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script src="{% static 'js/libs/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
   {% endcompress %}
 </head>
-<body class="{% block body_class %}{% endblock %}">
+<body class="{% block body_class %}{% endblock %}" {% block body_attributes %}{% endblock %}>
 {% block body %}
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
@@ -46,7 +49,7 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
   <header>
-
+    {% block header %}{% endblock %}
   </header>
 
   <div role="main">
@@ -54,21 +57,29 @@
   </div>
 
   <footer>
-    <p>&copy; Company 2013</p>
+    {% block footer %}
+    <div class="container">
+      <hr>
+      <p>&copy; Company 2013</p>
+    </div>
+    {% endblock footer %}
   </footer>
 
 
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  {% block cdn_js %}
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  {% endblock cdn_js %}
 
   <!-- scripts concatenated and minified via django-compressor -->
   {% compress js %}
-  <script src="{{ STATIC_URL }}js/libs/bootstrap.min.js"></script>
-  <script src="{{ STATIC_URL }}js/plugins.js"></script>
-  <script src="{{ STATIC_URL }}js/main.js"></script>
+  {% block js %}
+  <script src="{% static 'js/main.js' %}"></script>
+  {% endblock js %}
   {% endcompress %}
   <!-- end scripts -->
 
