@@ -21,8 +21,8 @@ and functionality in Django 1.6.
 
 By default, this project template includes:
 
-A set of basic templates built from HTML5Boilerplate 4.1.0 and Twitter Bootstrap 2.3.1 (located in the
-base app)
+A set of basic templates built from HTML5Boilerplate 4.1.0 and Twitter Bootstrap 3.0.2 (located in the
+base app, with css and javascript loaded from CloudFlare CDN by default).
 
 Templating:
 
