@@ -175,25 +175,25 @@ def custom_show_toolbar(request):
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
+    'SHOW_TOOLBAR_CALLBACK': '{{ project_name }}.settings.base.custom_show_toolbar',
     'HIDE_DJANGO_SQL': True,
     'TAG': 'body',
     'SHOW_TEMPLATE_CONTEXT': True,
     'ENABLE_STACKTRACES': True,
 }
 
-DEBUG_TOOLBAR_PANELS = (
-    #'debug_toolbar_user_panel.panels.UserPanel',
-    'debug_toolbar.panels.version.VersionDebugPanel',
-    'debug_toolbar.panels.timer.TimerDebugPanel',
-    'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
-    'debug_toolbar.panels.headers.HeaderDebugPanel',
-    'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
-    'debug_toolbar.panels.template.TemplateDebugPanel',
-    'debug_toolbar.panels.sql.SQLDebugPanel',
-    'debug_toolbar.panels.signals.SignalDebugPanel',
-    'debug_toolbar.panels.logger.LoggingPanel',
-)
+# DEBUG_TOOLBAR_PANELS = (
+#     #'debug_toolbar_user_panel.panels.UserPanel',
+#     'debug_toolbar.panels.version.VersionDebugPanel',
+#     'debug_toolbar.panels.timer.TimerDebugPanel',
+#     'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
+#     'debug_toolbar.panels.headers.HeaderDebugPanel',
+#     'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
+#     'debug_toolbar.panels.template.TemplateDebugPanel',
+#     'debug_toolbar.panels.sql.SQLDebugPanel',
+#     'debug_toolbar.panels.signals.SignalDebugPanel',
+#     'debug_toolbar.panels.logger.LoggingPanel',
+# )
 
 # Specify a custom user model to use
 #AUTH_USER_MODEL = 'accounts.MyUser'
