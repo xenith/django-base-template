@@ -75,9 +75,19 @@ There isn't a need to add settings/local.py to your source control, but there ar
 
 The second school of thought is that all settings should be versioned, so that as much of the code/settings as possible is the same across all developers and test/production servers. If you prefer this method, then make sure *all* necessary settings are properly set in settings/base.py, and then edit settings/__init__.py so it no longer reraises the exception. (ie, by replacing 'raise' with 'pass'). As it is, settings/local.py should only be overriding settings from settings/base.py anyway. (You could also just set the DJANGO_SETTINGS_MODULE environment variable to "{{ project_name }}.settings.base" directly.)
 
+## Python 3 compatability ##
+
+All the code provided in the template itself is compatable with Python 3. Unfortunately, there are still a number of libraries that do not work under Python 3. If you want to use this template under Python 3, you will need to either remove those libraries or find replacements for them.
+
+The libraries I am aware of that do not support Python 3:
+
+* django-compressor
+* python-memcached (use python3-memcached)
+* South has alpha support
+
 ## Special note ##
 
-In the next version of this template (for Django 1.7), South will likely be removed. Django 1.7 is expected to ship with a native migration system which is heavily based up and written by the author of South. For more information, see [the Django 1.7 development documentation][docs].
+In the next version of this template (for Django 1.7), South will likely be removed. Django 1.7 is expected to ship with a native migration system which is heavily based upon and written by the author of South. For more information, see [the Django 1.7 development documentation][docs].
 
 [docs]: https://docs.djangoproject.com/en/dev/topics/migrations/
 
