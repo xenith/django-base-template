@@ -47,7 +47,7 @@ Caching:
 
 Admin:
 
-- Includes django-admin-toolbar for development and production (enabled for superusers)
+- Includes django-debug-toolbar for development and production (enabled for superusers)
 
 Testing:
 
