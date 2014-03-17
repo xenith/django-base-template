@@ -198,7 +198,7 @@ DEBUG_TOOLBAR_CONFIG = {
 # Specify a custom user model to use
 #AUTH_USER_MODEL = 'accounts.MyUser'
 
-FILE_UPLOAD_PERMISSIONS = 0664
+FILE_UPLOAD_PERMISSIONS = 0o0664
 
 # The WSGI Application to use for runserver
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
