@@ -59,6 +59,7 @@ Any of these options can added, modified, or removed as you like after creating 
 ## How to use this project template to create your project ##
 
 - Create your working environment and virtualenv
+- Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
 - Install Django 1.6 ($ pip install Django>=1.6)
 - $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md,rst projectname
 - $ cd projectname
