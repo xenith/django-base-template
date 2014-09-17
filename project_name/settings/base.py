@@ -164,6 +164,8 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
 
 def custom_show_toolbar(request):
     """ Only show the debug toolbar to users with the superuser flag. """
