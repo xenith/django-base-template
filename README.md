@@ -1,5 +1,5 @@
 {% if False %}
-# Django 1.6 Base Template #
+# Django 1.7 Base Template #
 
 ## About ##
 
@@ -9,10 +9,10 @@ layouts/project templates. Playdoh is mainly setup for Mozilla's systems and is
 overly-complicated for a simple project template. (Though it does provide some
 very good real-world use examples.)
 
-This project template is designed for Django 1.4's new startproject template option. This version of the project template is designed for Django 1.6.
+This project template is designed for Django 1.4's new startproject template option. This version of the project template is designed for Django 1.7.
 
 As much as I could, all the code has been updated to use the new suggested layout
-and functionality in Django 1.6.
+and functionality in Django 1.7.
 
 [playdoh]: https://github.com/mozilla/playdoh
 [twoscoops]: https://github.com/twoscoops/django-twoscoops-project
@@ -21,7 +21,7 @@ and functionality in Django 1.6.
 
 By default, this project template includes:
 
-A set of basic templates built from HTML5Boilerplate 4.1.0 and Twitter Bootstrap 3.0.2 (located in the
+A set of basic templates built from HTML5Boilerplate 4.1.0 and Twitter Bootstrap 3.2.0 (located in the
 base app, with css and javascript loaded from CloudFlare CDN by default).
 
 Templating:
@@ -39,7 +39,7 @@ Background Tasks:
 
 Migrations:
 
-- South
+- Django built-in migrations
 
 Caching:
 
@@ -60,7 +60,7 @@ Any of these options can added, modified, or removed as you like after creating 
 
 - Create your working environment and virtualenv
 - Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
-- Install Django 1.6 ($ pip install Django>=1.6)
+- Install Django 1.7 ($ pip install Django>=1.7)
 - $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md,rst projectname
 - $ cd projectname
 - Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
@@ -84,13 +84,6 @@ The libraries I am aware of that do not support Python 3:
 
 * django-compressor
 * python-memcached (use python3-memcached)
-* South has alpha support
-
-## Special note ##
-
-In the next version of this template (for Django 1.7), South will likely be removed. Django 1.7 is expected to ship with a native migration system which is heavily based upon and written by the author of South. For more information, see [the Django 1.7 development documentation][docs].
-
-[docs]: https://docs.djangoproject.com/en/dev/topics/migrations/
 
 {% endif %}
 # The {{ project_name|title }} Project #

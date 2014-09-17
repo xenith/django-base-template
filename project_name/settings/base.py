@@ -49,9 +49,6 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'compressor',
 
-    # Database migrations
-    'south',
-
     # Application base, containing global templates.
     'base',
 

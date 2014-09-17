@@ -2,7 +2,7 @@
 -r compiled.txt
 
 # Django stuff
-Django>=1.6
+Django>=1.7
 
 # Templates
 django_compressor
