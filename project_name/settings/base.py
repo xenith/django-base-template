@@ -181,6 +181,13 @@ DEBUG_TOOLBAR_CONFIG = {
     'ENABLE_STACKTRACES': True,
 }
 
+# Uncomment the following setting if you get an ImportError such as:
+#   ImproperlyConfigured: The included urlconf projectname.urls doesn't have any patterns in it
+# See:
+# http://stackoverflow.com/questions/20963856/improperlyconfigured-the-included-urlconf-project-urls-doesnt-have-any-patte/21005346#21005346
+# http://django-debug-toolbar.readthedocs.org/en/1.0/installation.html#explicit-setup
+#DEBUG_TOOLBAR_PATCH_SETTINGS = False
+
 # DEBUG_TOOLBAR_PANELS = (
 #     #'debug_toolbar_user_panel.panels.UserPanel',
 #     'debug_toolbar.panels.version.VersionDebugPanel',
