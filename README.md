@@ -82,7 +82,6 @@ All the code provided in the template itself is compatable with Python 3. Unfort
 
 The libraries I am aware of that do not support Python 3:
 
-* django-compressor
 * python-memcached (use python3-memcached)
 
 {% endif %}
