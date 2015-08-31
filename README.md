@@ -94,7 +94,7 @@ Describe your project here.
 
 ## Prerequisites ##
 
-- Python 2.6 or 2.7
+- Python 2.7, 3.4 recommended
 - pip
 - virtualenv (virtualenvwrapper is recommended for use during development)
 
