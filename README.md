@@ -1,5 +1,5 @@
 {% if False %}
-# Django 1.7 Base Template #
+# Django 1.8 Base Template #
 
 ## About ##
 
@@ -9,10 +9,11 @@ layouts/project templates. Playdoh is mainly setup for Mozilla's systems and is
 overly-complicated for a simple project template. (Though it does provide some
 very good real-world use examples.)
 
-This project template is designed for Django 1.4's new startproject template option. This version of the project template is designed for Django 1.7.
+This project template is designed for Django startproject template option. This version of the
+project template is designed for Django 1.8.
 
-As much as I could, all the code has been updated to use the new suggested layout
-and functionality in Django 1.7.
+As much as I could, all the code has been updated to use the any suggested layouts
+and functionality in Django 1.8.
 
 [playdoh]: https://github.com/mozilla/playdoh
 [twoscoops]: https://github.com/twoscoops/django-twoscoops-project
@@ -60,7 +61,7 @@ Any of these options can added, modified, or removed as you like after creating 
 
 - Create your working environment and virtualenv
 - Make sure you have libffi installed ($ sudo apt-get install libffi-dev)
-- Install Django 1.7 ($ pip install Django>=1.7)
+- Install Django 1.8 ($ pip install Django>=1.8)
 - $ django-admin.py startproject --template https://github.com/xenith/django-base-template/zipball/master --extension py,md,rst projectname
 - $ cd projectname
 - Uncomment your preferred database adapter in requirements/compiled.txt (MySQL, Postgresql, or skip this step to stick with SQLite)
